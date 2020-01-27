@@ -4,6 +4,13 @@
 
 #include "SDL2/SDL.h"
 
+extern "C" 
+{
+   #include <lua.h>
+   #include <lualib.h>
+   #include <lauxlib.h>
+}
+
 class Game {
 
 public:
