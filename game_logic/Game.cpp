@@ -48,10 +48,9 @@ void Game::update()
    sol::state lua;
 	lua.open_libraries(sol::lib::base);
    //counter = lua.script_file("logic.lua");
-   sol::load_result updateLua = lua.load_file("logic.lua");
-	counter = updateLua();
+   lua.script_file("logic.lua");
 
-   std::cout << counter << std::endl;
+   //std::cout << counter << std::endl;
 }
 
 void Game::render()
