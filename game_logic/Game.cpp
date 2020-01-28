@@ -1,6 +1,7 @@
 
 #include "Game.hpp"
 #include <iostream>
+#include "sol/sol.hpp"
 
 sol::state lua;
 sol::function updateLua;
