@@ -20,12 +20,12 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
          SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
          std::cout << "Renderer created..." << std::endl;
       }
+      lua.script_file("logic.lua");
+      updateLua = lua["update"];
       is_running = true;
    } else {
       is_running = false;
    }
-   lua.script_file("logic.lua");
-   updateLua = lua["update"];
 }
 
 void Game::handle_events()
