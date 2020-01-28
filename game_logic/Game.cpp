@@ -1,7 +1,6 @@
 
 #include "Game.hpp"
 #include <iostream>
-#include "sol/sol.hpp"
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -25,6 +24,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
    } else {
       is_running = false;
    }
+   lua.script_file("logic.lua");
+   updateLua = lua["update"];
 }
 
 void Game::handle_events()
@@ -44,12 +45,7 @@ void Game::update()
 {
    // call Lua's function update() to increment a counter
    // and print the returned value
-   int counter;
-   sol::state lua;
-   lua.script_file("logic.lua");
-   sol::function updateLua = lua["update"];
    counter = updateLua();
-
    std::cout << counter << std::endl;
 }
 

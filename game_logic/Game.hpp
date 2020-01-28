@@ -3,13 +3,7 @@
 #define __GAME_HPP__
 
 #include "SDL2/SDL.h"
-
-extern "C" 
-{
-   #include <lua.h>
-   #include <lualib.h>
-   #include <lauxlib.h>
-}
+#include "sol/sol.hpp"
 
 class Game {
 
@@ -26,9 +20,12 @@ public:
    bool running()            { return is_running; }
 
 private:
+   int counter{};
    bool is_running{};
    SDL_Window* window{};
    SDL_Renderer* renderer{};
+   sol::state lua;
+   sol::function updateLua;
 };
 
 
