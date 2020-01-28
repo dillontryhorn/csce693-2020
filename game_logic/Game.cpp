@@ -50,8 +50,7 @@ void Game::update()
    // call Lua's function update() to increment a counter
    // and print the returned value
    int counter = updateLua();
-   int counter2 = updateLua();
-   std::cout << counter << counter2 << std::endl;
+   std::cout << counter << std::endl;
 }
 
 void Game::render()
