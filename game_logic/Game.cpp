@@ -20,8 +20,6 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
          SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
          std::cout << "Renderer created..." << std::endl;
       }
-      lua.script_file("logic.lua");
-      updateLua = lua["update"];
       is_running = true;
    } else {
       is_running = false;
@@ -45,8 +43,11 @@ void Game::update()
 {
    // call Lua's function update() to increment a counter
    // and print the returned value
+   lua.script_file("logic.lua");
+   updateLua = lua["update"];
    counter = updateLua();
-   std::cout << counter << std::endl;
+   int counter2 = updateLua();
+   std::cout << counter << counter2 << std::endl;
 }
 
 void Game::render()
