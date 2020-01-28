@@ -23,8 +23,8 @@ private:
    bool is_running{};
    SDL_Window* window{};
    SDL_Renderer* renderer{};
-   sol::state lua;
-   sol::function updateLua;
+   sol::state lua{};
+   sol::function updateLua{};
 };
 
 
