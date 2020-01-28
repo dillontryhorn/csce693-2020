@@ -20,11 +20,10 @@ public:
    bool running()            { return is_running; }
 
 private:
-   int counter{};
+   int counter = 0;
    bool is_running{};
    SDL_Window* window{};
    SDL_Renderer* renderer{};
-   sol::state lua;
    sol::function updateLua;
 };
 
