@@ -22,7 +22,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
       }
       sol::state lua;
       lua.script_file("logic.lua");
-      updateLua = lua["update"]  ;
+      this->updateLua = lua["update"];
       is_running = true;
    } else {
       is_running = false;
@@ -46,8 +46,8 @@ void Game::update()
 {
    // call Lua's function update() to increment a counter
    // and print the returned value
-   counter = updateLua();
-   int counter2 = updateLua();
+   int counter = this->updateLua();
+   int counter2 = this->updateLua();
    std::cout << counter << counter2 << std::endl;
 }
 
