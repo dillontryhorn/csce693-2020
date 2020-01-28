@@ -46,11 +46,11 @@ void Game::update()
    // and print the returned value
    int counter;
    sol::state lua;
-	lua.open_libraries(sol::lib::base);
-   //counter = lua.script_file("logic.lua");
    lua.script_file("logic.lua");
+   sol::function updateLua = lua["update"];
+   counter = updateLua();
 
-   //std::cout << counter << std::endl;
+   std::cout << counter << std::endl;
 }
 
 void Game::render()

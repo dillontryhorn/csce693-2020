@@ -8,6 +8,5 @@ count = 0
 
 function update()
    count = count + 1
-   print count
    return count
    end
