@@ -2,10 +2,7 @@
 .vscode/
 
 # compiled object files
-*.[oa]
-!deps/lib/libSDL2.a
-!deps/lib/libSDL2_image.a
-!deps/lib/liblua.a
+*.o
 
 # examples
 game_config/game_config
@@ -13,3 +10,4 @@ game_logic/game_logic
 game_loop/game_loop
 sol_test/sol_test
 timer_test/timer_test
+
