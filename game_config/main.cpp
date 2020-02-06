@@ -34,7 +34,12 @@ int main() {
       fullscreen = lua_toboolean( L, -1 );
 
    std::cout << "Creating game" << std::endl;
+<<<<<<< HEAD
    auto game = std::make_unique<Game>("1st Game", xpos, ypos, width, height, fullscreen);
+=======
+   // read Lua script to determine initial window size infomation
+   auto game = std::make_unique<Game>("1st Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
+>>>>>>> 7e4312ab39ea1c608616940e119fd11f79b23f06
 
    std::cout << "Starting game loop" << std::endl;
    while (game->running()) {

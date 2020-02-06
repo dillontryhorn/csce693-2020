@@ -14,7 +14,7 @@ public:
    void update();
    void render();
 
-   bool running()            { return is_running; }
+   bool running()                { return is_running; }
 
 private:
    bool is_running{};
@@ -22,5 +22,5 @@ private:
    SDL_Renderer* renderer{};
 };
 
-
 #endif
+

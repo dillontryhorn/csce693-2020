@@ -20,7 +20,7 @@ Game::Game(const char* title, int xpos, int ypos, int width, int height, bool fu
          SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
          std::cout << "Renderer created..." << std::endl;
       }
-      is_running = true;
+   is_running = true;
    } else {
       is_running = false;
    }
@@ -59,3 +59,7 @@ void Game::render()
    // this is where we would add stuff to render
    SDL_RenderPresent(renderer);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e4312ab39ea1c608616940e119fd11f79b23f06
