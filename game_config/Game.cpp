@@ -59,7 +59,3 @@ void Game::render()
    // this is where we would add stuff to render
    SDL_RenderPresent(renderer);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 7e4312ab39ea1c608616940e119fd11f79b23f06
