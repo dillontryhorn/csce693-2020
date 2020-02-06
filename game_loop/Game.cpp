@@ -15,12 +15,21 @@ Game::Game(const char* title, int xpos, int ypos, int width, int height, bool fu
       if (window) {
          std::cout << "Window created..." << std::endl;
       }
+      else {
+         SDL_Quit();
+         throw std::runtime_error("SDL window could not be created.");
+      }
       renderer = SDL_CreateRenderer(window, -1, 0);
       if (renderer) {
          SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
          std::cout << "Renderer created..." << std::endl;
       }
-   is_running = true;
+      else {
+         SDL_DestroyWindow(window);
+         SDL_Quit();
+         throw std::runtime_error("SDL renderer could not be created.");
+      }
+      is_running = true;
    } else {
       is_running = false;
    }
