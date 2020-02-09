@@ -20,7 +20,7 @@ int main() {
          game->render();
          auto end = std::chrono::system_clock::now();
          auto duration = end - start;
-         std::this_thread::sleep_for(std::chrono::duration<float>(1.0f/60.0f) - duration); //60 updates per second, 60Hz
+         std::this_thread::sleep_for(std::chrono::duration<double>(1.0/60.0) - duration); //60 updates per second, 60Hz
       }
       auto endLoop = std::chrono::system_clock::now();
       auto durationLoop = endLoop - startLoop;
