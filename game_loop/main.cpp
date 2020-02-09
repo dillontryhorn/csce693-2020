@@ -18,7 +18,7 @@ int main() {
          game->update();
          game->render();
          auto end = std::chrono::system_clock::now();
-         auto duration = end - start;
+         auto duration = end - start; //Functions take time, so subtract that duration from 1/60 seconds
          std::this_thread::sleep_for(std::chrono::duration<double>(1.0/60.0) - duration); //60 updates per second, 60Hz
       }
    } catch(std::runtime_error &e) {
