@@ -16,7 +16,7 @@ Game::Game(const char* title, int xpos, int ypos, int width, int height, bool fu
          std::cout << "Window created..." << std::endl;
       }
       else {
-         SDL_Quit();
+         SDL_Quit(); //Window or renderer not created but SDL initialized
          throw std::runtime_error("SDL window could not be created.");
       }
       renderer = SDL_CreateRenderer(window, -1, 0);
@@ -26,12 +26,13 @@ Game::Game(const char* title, int xpos, int ypos, int width, int height, bool fu
       }
       else {
          SDL_DestroyWindow(window);
-         SDL_Quit();
+         SDL_Quit(); //Window created and SDL initialized but no renderer
          throw std::runtime_error("SDL renderer could not be created.");
       }
       is_running = true;
    } else {
       is_running = false;
+      throw std::runtime_error("SDL could not be initialized."); //SDL not initialized
    }
 }
 
